@@ -15,7 +15,7 @@
 - run: php artisan key:generate
 - run: php artisan migrate:fresh --seed
 - if any error is thrown in the console then check if your sqlite driver is working or not. if working then try to run: touch database/database.sqlite and then run php artisan migrate --seed
-- run: php artisan:optimize
+- run: php artisan optimize
 - run: php artisan cache:clear
 - run: php artisan serve
 - Go to the browser with the url
