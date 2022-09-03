@@ -1,0 +1,236 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot access property \\$email on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/ConfirmablePasswordController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+
+		-
+			message: "#^Cannot call method sendEmailVerificationNotification\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationPromptController.php
+
+		-
+			message: "#^Parameter \\#1 \\$key of function __ expects string\\|null, mixed given\\.$#"
+			count: 2
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Hashing\\\\HashManager\\:\\:make\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Hashing\\\\HashManager\\:\\:make\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Cannot call method markEmailAsVerified\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Parameter \\#1 \\$user of class Illuminate\\\\Auth\\\\Events\\\\Verified constructor expects Illuminate\\\\Contracts\\\\Auth\\\\MustVerifyEmail, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Support\\\\Str\\:\\:lower\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Requests/Auth/LoginRequest.php
+
+		-
+			message: "#^Cannot access property \\$base on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$rates on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_close expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_exec expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_setopt expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 3
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, bool\\|string given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessDepositFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$base on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$rates on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_close expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_exec expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_setopt expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 3
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, bool\\|string given\\.$#"
+			count: 1
+			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Services\\\\CommonFeeCalculationQueryService\\:\\:getPaymentRuleByPaymentClientType\\(\\) should return App\\\\Models\\\\PaymentRule but returns App\\\\Models\\\\PaymentRule\\|null\\.$#"
+			count: 1
+			path: app/Http/Services/CommonFeeCalculationQueryService.php
+
+		-
+			message: "#^Cannot access offset int\\<0, 5\\> on array\\|false\\.$#"
+			count: 1
+			path: app/Http/Services/CsvFileParser.php
+
+		-
+			message: "#^Parameter \\#1 \\$filename of function fopen expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Services/CsvFileParser.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fclose expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/CsvFileParser.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function feof expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/CsvFileParser.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fgetcsv expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/CsvFileParser.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:feeCalculate\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Services/DepositFeeCalculatorService.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:feeCalculate\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Services/FeeCalculatorService.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:parseFile\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Services/FileParsingService.php
+
+		-
+			message: "#^Cannot call method getClientOriginalName\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/FileParsingService.php
+
+		-
+			message: "#^Cannot access property \\$base on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$rates on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_close expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_exec expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_setopt expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 3
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, bool\\|string given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateDepositFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$base on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$rates on mixed\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_close expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_exec expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$handle of function curl_setopt expects CurlHandle, CurlHandle\\|false given\\.$#"
+			count: 3
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, bool\\|string given\\.$#"
+			count: 1
+			path: app/Http/Services/PrivateWithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:feeCalculate\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Services/WithdrawFeeCalculatorService.php
+
+		-
+			message: "#^Cannot access property \\$id on mixed\\.$#"
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
