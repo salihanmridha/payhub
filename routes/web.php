@@ -16,15 +16,14 @@ use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     // return \App\Models\PaymentRule::all();
-    return redirect()->route('login');
+    return redirect()->route('dashboard');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 Route::post('/payment-store', [PaymentController::class, 'store'])
-     ->middleware(['auth'])
      ->name('payment.store');
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

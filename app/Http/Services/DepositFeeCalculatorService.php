@@ -8,9 +8,10 @@ class DepositFeeCalculatorService implements CommonFeeCalculatorInterface
 {
     /**
      * @param  array $fileElement
+     * @param  array $freeLimitUsed
      * @return mixed|int|float
      */
-    public function feeCalculate(array $fileElement): mixed
+    public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): mixed
     {
       $fullClassName = 'App\\Http\\Services\\' . ucfirst($fileElement["client_type"]) . ucfirst($fileElement["payment_type"]) . "FeeCalculatorService";
 

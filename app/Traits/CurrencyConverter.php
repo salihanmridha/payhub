@@ -5,7 +5,7 @@ namespace App\Traits;
 trait CurrencyConverter
 {
 
-  public function currencyConvert(string $currency): array
+  public function getAllRates(): mixed
   {
     $url = "https://developers.paysera.com/tasks/api/currency-exchange-rates";
 
@@ -21,10 +21,9 @@ trait CurrencyConverter
 
     $resp = curl_exec($curl);
     curl_close($curl);
-    $resp = json_decode($resp);
-    return ["base" => $resp->base, "rate" => $resp->rates->$currency];
-
-
+    $resp = json_decode($resp, true);
+    return $resp;
+    
   }
 
 }
