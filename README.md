@@ -10,6 +10,7 @@
 ## Installation
 - Clone the repository
 - Composer update
+- run: npm install
 - run: npm run dev
 - Rename .env.example to .env
 - run: php artisan key:generate
