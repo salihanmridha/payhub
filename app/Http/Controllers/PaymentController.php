@@ -11,19 +11,19 @@ class PaymentController extends Controller
 
     public function __construct(FeeCalculatorInterface $feeCalculator)
     {
-      $this->feeCalculator = $feeCalculator;
+        $this->feeCalculator = $feeCalculator;
     }
 
     /**
-     * @param  StorePaymentRequest $request
+     * @param StorePaymentRequest $request
      * @return void
      */
     public function store(StorePaymentRequest $request): void
     {
-      $feeCalculation =  $this->feeCalculator->execute($request->file("file"));
+        $feeCalculation = $this->feeCalculator->execute($request->file("file"));
 
-      for ($i=0; $i < count($feeCalculation); $i++) {
-        echo $feeCalculation[$i] . "<br>";
-      }
+        for ($i = 0; $i < count($feeCalculation); $i++) {
+            echo $feeCalculation[$i] . "<br>";
+        }
     }
 }

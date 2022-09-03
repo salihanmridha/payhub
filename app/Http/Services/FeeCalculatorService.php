@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Http\Contracts\FeeCalculatorInterface;
 use App\Http\Contracts\FileParsingInterface;
+use Exception;
 
 class FeeCalculatorService extends CommonFeeCalculationQueryService implements FeeCalculatorInterface
 {
@@ -14,32 +15,32 @@ class FeeCalculatorService extends CommonFeeCalculationQueryService implements F
 
     public function __construct(FileParsingInterface $fileParsing)
     {
-      $this->fileParsing = $fileParsing;
+        $this->fileParsing = $fileParsing;
 
-      $this->result = [];
-      $this->freeLimitUsed = [];
-      $this->crossRate = [];
+        $this->result = [];
+        $this->freeLimitUsed = [];
+        $this->crossRate = [];
     }
 
     public function execute(mixed $file): array
     {
-      $fileParsing = $this->fileParsing->fileParser($file);
+        $fileParsing = $this->fileParsing->fileParser($file);
 
-      foreach ($fileParsing as $fileElement) {
-        $fullClassName = 'App\\Http\\Services\\' . ucfirst($fileElement["payment_type"]) . "FeeCalculatorService";
+        foreach ($fileParsing as $fileElement) {
+            $fullClassName = 'App\\Http\\Services\\' . ucfirst($fileElement["payment_type"]) . "FeeCalculatorService";
 
-        $manageLimit = $this->manageFreeFeeLimit($fileElement);
-        $crossRate = $this->getCrossRate($fileElement["currency"]);
+            $manageLimit = $this->manageFreeFeeLimit($fileElement);
+            $crossRate = $this->getCrossRate($fileElement["currency"]);
 
-        if (class_exists($fullClassName)) {
-            $commisionFee = (new $fullClassName())->feeCalculate($fileElement, $manageLimit, $crossRate);
-            array_push($this->result, $commisionFee);
-        } else {
-            throw new \Exception('CSV file has invalid payment type: ' . $fullClassName);
+            if (class_exists($fullClassName)) {
+                $commisionFee = (new $fullClassName())->feeCalculate($fileElement, $manageLimit, $crossRate);
+                array_push($this->result, $commisionFee);
+            } else {
+                throw new Exception('CSV file has invalid payment type: ' . $fullClassName);
+            }
         }
-      }
 
-      return $this->result;
+        return $this->result;
     }
 
 }
