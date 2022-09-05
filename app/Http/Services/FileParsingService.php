@@ -9,8 +9,6 @@ use Exception;
 class FileParsingService implements FileParsingInterface
 {
     /**
-     * @param $file
-     * @return array
      * @throws Exception
      */
     public function fileParser(mixed $file): array
@@ -32,7 +30,6 @@ class FileParsingService implements FileParsingInterface
      */
     public function getFileExtension(string $fileName): string
     {
-        $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-        return $extension;
+        return pathinfo($fileName, PATHINFO_EXTENSION);
     }
 }

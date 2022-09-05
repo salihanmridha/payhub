@@ -11,8 +11,9 @@ class PrivateDepositFeeCalculatorService extends CommonFeeCalculationQueryServic
 
     /**
      * @param array $fileElement
-     * @param array $freeLimitUsed
-     * @return mixed|int|float
+     * @param array|null $freeLimitUsed
+     * @param array|null $crossRate
+     * @return mixed
      */
     public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): mixed
     {

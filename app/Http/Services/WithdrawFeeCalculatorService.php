@@ -9,8 +9,10 @@ class WithdrawFeeCalculatorService implements CommonFeeCalculatorInterface
 {
     /**
      * @param array $fileElement
-     * @param array $freeLimitUsed
-     * @return mixed|int|float
+     * @param array|null $freeLimitUsed
+     * @param array|null $crossRate
+     * @return mixed
+     * @throws Exception
      */
     public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): mixed
     {

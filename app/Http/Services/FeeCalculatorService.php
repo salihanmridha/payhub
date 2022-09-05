@@ -11,7 +11,7 @@ class FeeCalculatorService extends CommonFeeCalculationQueryService implements F
     private FileParsingInterface $fileParsing;
     public array $result;
     protected array $freeLimitUsed;
-    public array $crossRate;
+    protected array $crossRate;
 
     public function __construct(FileParsingInterface $fileParsing)
     {
@@ -22,19 +22,25 @@ class FeeCalculatorService extends CommonFeeCalculationQueryService implements F
         $this->crossRate = [];
     }
 
+    /**
+     * @throws Exception
+     */
     public function execute(mixed $file): array
     {
         $fileParsing = $this->fileParsing->fileParser($file);
 
         foreach ($fileParsing as $fileElement) {
+
+            $crossRate = null; $manageLimit = null;
+            if ($fileElement["client_type"] == "private" && $fileElement["payment_type"] == "withdraw"){
+                $crossRate = $this->getCrossRate($fileElement["currency"]);
+                $manageLimit = $this->manageFreeFeeLimit($fileElement, $crossRate);
+            }
+
             $fullClassName = 'App\\Http\\Services\\' . ucfirst($fileElement["payment_type"]) . "FeeCalculatorService";
-
-            $manageLimit = $this->manageFreeFeeLimit($fileElement);
-            $crossRate = $this->getCrossRate($fileElement["currency"]);
-
             if (class_exists($fullClassName)) {
-                $commisionFee = (new $fullClassName())->feeCalculate($fileElement, $manageLimit, $crossRate);
-                array_push($this->result, $commisionFee);
+                $commissionFee = (new $fullClassName())->feeCalculate($fileElement, $manageLimit, $crossRate);
+                $this->result[] = $commissionFee;
             } else {
                 throw new Exception('CSV file has invalid payment type: ' . $fullClassName);
             }

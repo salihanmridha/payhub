@@ -31,16 +31,6 @@ parameters:
 			path: app/Http/Services/BusinessWithdrawFeeCalculatorService.php
 
 		-
-			message: "#^Access to an undefined property App\\\\Http\\\\Services\\\\CommonFeeCalculationQueryService\\:\\:\\$crossRate\\.$#"
-			count: 4
-			path: app/Http/Services/CommonFeeCalculationQueryService.php
-
-		-
-			message: "#^Access to an undefined property App\\\\Http\\\\Services\\\\CommonFeeCalculationQueryService\\:\\:\\$freeLimitUsed\\.$#"
-			count: 10
-			path: app/Http/Services/CommonFeeCalculationQueryService.php
-
-		-
 			message: "#^Cannot access offset non\\-falsy\\-string on mixed\\.$#"
 			count: 1
 			path: app/Http/Services/CommonFeeCalculationQueryService.php
@@ -51,7 +41,12 @@ parameters:
 			path: app/Http/Services/CommonFeeCalculationQueryService.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(string\\)\\: Unexpected token \"\\\\r\\\\n     \\* \", expected variable at offset 26$#"
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: app/Http/Services/CommonFeeCalculationQueryService.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(string\\)\\: Unexpected token \"\\\\n     \\* \", expected variable at offset 24$#"
 			count: 1
 			path: app/Http/Services/CommonFeeCalculationQueryService.php
 
@@ -76,8 +71,13 @@ parameters:
 			path: app/Http/Services/CommonFeeCalculationQueryService.php
 
 		-
+			message: "#^Parameter \\#1 \\$paymentRule of method App\\\\Http\\\\Services\\\\CommonFeeCalculationQueryService\\:\\:getFreeLimit\\(\\) expects array, mixed given\\.$#"
+			count: 1
+			path: app/Http/Services/CommonFeeCalculationQueryService.php
+
+		-
 			message: "#^Parameter \\#2 \\$decimals of function number_format expects int, mixed given\\.$#"
-			count: 3
+			count: 2
 			path: app/Http/Services/CommonFeeCalculationQueryService.php
 
 		-

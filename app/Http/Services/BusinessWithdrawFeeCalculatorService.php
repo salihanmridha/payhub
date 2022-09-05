@@ -12,7 +12,8 @@ class BusinessWithdrawFeeCalculatorService extends CommonFeeCalculationQueryServ
     /**
      * @param array $fileElement
      * @param array|null $freeLimitUsed
-     * @return float|int|mixed
+     * @param array|null $crossRate
+     * @return mixed
      */
     public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): mixed
     {

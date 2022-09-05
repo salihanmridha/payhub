@@ -13,10 +13,11 @@ class PrivateWithdrawFeeCalculatorService extends CommonFeeCalculationQueryServi
 
     /**
      * @param array $fileElement
-     * @param array $freeLimitUsed
-     * @return mixed|int|float
+     * @param array|null $freeLimitUsed
+     * @param array|null $crossRate
+     * @return string
      */
-    public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): mixed
+    public function feeCalculate(array $fileElement, array $freeLimitUsed = null, array $crossRate = null): string
     {
         $clientPaymentType = $fileElement["client_type"] . "_" . $fileElement["payment_type"];
         $paymentRule = config('payhub.payment_rule')[$clientPaymentType];
