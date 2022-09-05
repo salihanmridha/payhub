@@ -33,5 +33,8 @@
 - run: phpunit
 - run: phpunit --filter test_users_can_upload_and_calculate_fee (this is only for the fee task)
 
+## Approx. time used
+- I have used 6 to 8 hrs
+
 ## Note
 In the task description the output result now is not right. Due to big changes in JPY currency with the EUR, one result is not the same as the given output result.
